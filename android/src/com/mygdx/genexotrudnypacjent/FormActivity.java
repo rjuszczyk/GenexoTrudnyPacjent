@@ -50,7 +50,7 @@ public class FormActivity extends AppCompatActivity {
                 ) {
             if(mCheck1.isChecked() == true && mCheck2.isChecked() == true) {
                 userData.setUserData(mImie.getText().toString(), mNazwisko.getText().toString(), mTelefon.getText().toString(), mEmail.getText().toString(), mCheck1.isChecked(), mCheck2.isChecked(), mCheck3.isChecked());
-                Intent intent = new Intent(this, AndroidLauncher.class);
+                Intent intent = new Intent(this, QuizQuestion1.class);
                 intent.putExtra("user_data", userData);
                 startActivity(intent);
             } else {

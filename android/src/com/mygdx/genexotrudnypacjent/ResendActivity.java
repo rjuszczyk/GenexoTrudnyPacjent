@@ -115,6 +115,11 @@ public class ResendActivity extends AppCompatActivity {
                     notSendUser.odp1,
                     notSendUser.odp2,
                     notSendUser.odp3,
+
+                    notSendUser.quiz_odp1,
+                    notSendUser.quiz_odp2,
+                    notSendUser.quiz_odp3,
+
                     notSendUser.nazwa_apteki,
                     notSendUser.ulica,
                     notSendUser.miasto,
@@ -140,6 +145,9 @@ public class ResendActivity extends AppCompatActivity {
             final String odp1,
             final String odp2,
             final String odp3,
+            final String quiz_odp1,
+            final String quiz_odp2,
+            final String quiz_odp3,
             final String nazwa_apteki,
             final String ulica,
             final String miasto,
@@ -174,8 +182,14 @@ public class ResendActivity extends AppCompatActivity {
         data += "&" + URLEncoder.encode("odp3", "UTF-8") + "="
                 + URLEncoder.encode(odp3, "UTF-8");
 
-        data += "&" + URLEncoder.encode("odp3", "UTF-8") + "="
-                + URLEncoder.encode(odp3, "UTF-8");
+        data += "&" + URLEncoder.encode("quiz_odp1", "UTF-8") + "="
+                + URLEncoder.encode(quiz_odp1, "UTF-8");
+
+        data += "&" + URLEncoder.encode("quiz_odp2", "UTF-8") + "="
+                + URLEncoder.encode(quiz_odp2, "UTF-8");
+
+        data += "&" + URLEncoder.encode("quiz_odp3", "UTF-8") + "="
+                + URLEncoder.encode(quiz_odp3, "UTF-8");
 
         data += "&" + URLEncoder.encode("nazwa_apteki", "UTF-8") + "="
                 + URLEncoder.encode(nazwa_apteki, "UTF-8");
@@ -203,7 +217,6 @@ public class ResendActivity extends AppCompatActivity {
                 + URLEncoder.encode(rks_imie, "UTF-8");
 
         data += "&" + URLEncoder.encode("data_utworzenia", "UTF-8") + "="
-
                 + URLEncoder.encode(data_utworzenia, "UTF-8");
 
         String text = "";
@@ -254,6 +267,10 @@ public class ResendActivity extends AppCompatActivity {
                             notSendUser.odp1 = odp1;
                             notSendUser.odp2 = odp2;
                             notSendUser.odp3 = odp3;
+                            notSendUser.quiz_odp1 = quiz_odp1;
+                            notSendUser.quiz_odp2 = quiz_odp2;
+                            notSendUser.quiz_odp3 = quiz_odp3;
+
                             notSendUser.nazwa_apteki = nazwa_apteki;
                             notSendUser.ulica = ulica;
                             notSendUser.miasto = miasto;
@@ -290,6 +307,11 @@ public class ResendActivity extends AppCompatActivity {
                         notSendUser.odp1 = odp1;
                         notSendUser.odp2 = odp2;
                         notSendUser.odp3 = odp3;
+
+                        notSendUser.quiz_odp1 = quiz_odp1;
+                        notSendUser.quiz_odp2 = quiz_odp2;
+                        notSendUser.quiz_odp3 = quiz_odp3;
+
                         notSendUser.nazwa_apteki = nazwa_apteki;
                         notSendUser.ulica = ulica;
                         notSendUser.miasto = miasto;

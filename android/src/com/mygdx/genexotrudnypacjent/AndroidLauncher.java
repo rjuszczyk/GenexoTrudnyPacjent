@@ -2,25 +2,13 @@ package com.mygdx.genexotrudnypacjent;
 
 import android.content.Intent;
 
-import android.graphics.Point;
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.Display;
-import android.view.Gravity;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
-import android.widget.FrameLayout;
 import android.widget.ImageView;
 
-import com.badlogic.gdx.backends.android.AndroidApplication;
-import com.badlogic.gdx.backends.android.AndroidApplicationConfiguration;
-import com.mygdx.genexotrudnypacjent.R;
 import com.mygdx.genexotrudnypacjent.model.UserData;
 import com.mygdx.genexotrudnypacjent.util.SoundHelper;
-import com.mygdx.livex.MyGdxGame;
 
 public class AndroidLauncher extends AppCompatActivity {
 	UserData mUserData;
@@ -236,7 +224,7 @@ public class AndroidLauncher extends AppCompatActivity {
 			@Override
 			public void onClick(View v) {
 				if(pyt1_ok && pyt2_ok && pyt3_ok) {
-					onQuizEnd();
+					gotoNext();
 				} else {
 					prosimy1.setVisibility(View.VISIBLE);
 					prosimy2.setVisibility(View.VISIBLE);
@@ -287,7 +275,7 @@ public class AndroidLauncher extends AppCompatActivity {
 		super.onResume();
 	}
 
-	private void onQuizEnd() {
+	private void gotoNext() {
 		Intent intent = new Intent(this, SendingDataActivity.class);
 		intent.putExtra("user_data", mUserData);
 		finish();

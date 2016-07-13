@@ -99,6 +99,7 @@ public class SendingDataActivity extends AppCompatActivity {
             String data_utworzenia = DateFormat.format("yyyy-MM-dd hh:mm:ss", new java.util.Date()).toString();//new Date().toString();
 
             sendData(userData.getImie(), userData.getNazwisko(), userData.getTelefon(), userData.getEmail(), userData.getCheck1(), userData.getCheck2(), userData.getCheck3(),
+                    userData.getQuiz_odp1(), userData.getQuiz_odp2(), userData.getQuiz_odp3(),
                     row.nazwa_apteki, row.ulica, row.miasto, row.wojewodztwo, row.nazwisko_przedstawiciela, row.imie_przedstawiciela, row.rks_nazwisko, row.rks_imie, data_utworzenia);
         } catch (Exception e) {
             e.printStackTrace();
@@ -116,6 +117,11 @@ public class SendingDataActivity extends AppCompatActivity {
             final String odp1,
             final String odp2,
             final String odp3,
+
+            final String quiz_odp1,
+            final String quiz_odp2,
+            final String quiz_odp3,
+
             final String nazwa_apteki,
             final String ulica,
             final String miasto,
@@ -152,6 +158,15 @@ public class SendingDataActivity extends AppCompatActivity {
 
         data += "&" + URLEncoder.encode("odp3", "UTF-8") + "="
                 + URLEncoder.encode(odp3, "UTF-8");
+
+        data += "&" + URLEncoder.encode("quiz_odp1", "UTF-8") + "="
+                + URLEncoder.encode(quiz_odp1, "UTF-8");
+
+        data += "&" + URLEncoder.encode("quiz_odp2", "UTF-8") + "="
+                + URLEncoder.encode(quiz_odp2, "UTF-8");
+
+        data += "&" + URLEncoder.encode("quiz_odp3", "UTF-8") + "="
+                + URLEncoder.encode(quiz_odp3, "UTF-8");
 
         data += "&" + URLEncoder.encode("nazwa_apteki", "UTF-8") + "="
                 + URLEncoder.encode(nazwa_apteki, "UTF-8");
@@ -231,6 +246,11 @@ public class SendingDataActivity extends AppCompatActivity {
                             notSendUser.odp1 = odp1;
                             notSendUser.odp2 = odp2;
                             notSendUser.odp3 = odp3;
+
+                            notSendUser.quiz_odp1 = quiz_odp1;
+                            notSendUser.quiz_odp2 = quiz_odp2;
+                            notSendUser.quiz_odp3 = quiz_odp3;
+
                             notSendUser.nazwa_apteki = nazwa_apteki;
                             notSendUser.ulica = ulica;
                             notSendUser.miasto = miasto;
@@ -266,6 +286,10 @@ public class SendingDataActivity extends AppCompatActivity {
                         notSendUser.odp1 = odp1;
                         notSendUser.odp2 = odp2;
                         notSendUser.odp3 = odp3;
+
+                        notSendUser.quiz_odp1 = quiz_odp1;
+                        notSendUser.quiz_odp2 = quiz_odp2;
+                        notSendUser.quiz_odp3 = quiz_odp3;
                         notSendUser.nazwa_apteki = nazwa_apteki;
                         notSendUser.ulica = ulica;
                         notSendUser.miasto = miasto;

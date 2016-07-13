@@ -36,6 +36,34 @@ public class UserData implements Serializable {
     String check2;
     String check3;
 
+    public String getQuiz_odp1() {
+        return quiz_odp1;
+    }
+
+    public String getQuiz_odp2() {
+        return quiz_odp2;
+    }
+
+    public String getQuiz_odp3() {
+        return quiz_odp3;
+    }
+
+    public void setQuiz_odp1(String quiz_odp1) {
+        this.quiz_odp1 = quiz_odp1;
+    }
+
+    public void setQuiz_odp2(String quiz_odp2) {
+        this.quiz_odp2 = quiz_odp2;
+    }
+
+    public void setQuiz_odp3(String quiz_odp3) {
+        this.quiz_odp3 = quiz_odp3;
+    }
+
+    String quiz_odp1;
+    String quiz_odp2;
+    String quiz_odp3;
+
     public void setRow(Row row) {
         this.row = row;
     }

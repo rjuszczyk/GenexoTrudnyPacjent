@@ -13,6 +13,9 @@ public class NotSendUser extends Model {
     public String odp1;
     public String odp2;
     public String odp3;
+    public String quiz_odp1;
+    public String quiz_odp2;
+    public String quiz_odp3;
     public String nazwa_apteki;
     public String ulica;
     public String miasto;
