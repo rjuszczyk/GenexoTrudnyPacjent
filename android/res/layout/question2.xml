@@ -1,78 +1,145 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
-    <RadioGroup
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <RadioButton
-            android:id="@+id/q1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Rozpoczęcie rozmowy" />
-
-        <RadioButton
-            android:id="@+id/q2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Wytłumaczenie trudnych kwestii np.:" />
-        <EditText
-            android:id="@+id/input2"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:background="@drawable/background"/>
-
-        <RadioButton
-            android:id="@+id/q3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Poinformowanie o braku produktu w aptece, ponieważ " />
-        <EditText
-            android:id="@+id/input3"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:background="@drawable/background"/>
-        <RadioButton
-            android:id="@+id/q5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Poinformowanie o braku możliwości sprzedaży produktu" />
-
-        <RadioButton
-            android:id="@+id/q6"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Odpowiedź na zarzuty ze strony pacjenta" />
-
-
-
-
-        <RadioButton
-            android:id="@+id/q4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Reakcja na.... (wymień inne sytuacje):" />
-        <EditText
-            android:id="@+id/input"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:background="@drawable/background"/>
-    </RadioGroup>
 
     <ImageView
-        android:id="@+id/next"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:src="@drawable/dalej"
-        android:layout_gravity="bottom|right"
-        android:layout_marginRight="300dp"
-        android:layout_marginBottom="20dp"
-        android:text="DALEJ" />
+        android:adjustViewBounds="true"
+        android:src="@drawable/form_top"/>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:layout_marginRight="40dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="right|bottom"
+            android:src="@drawable/pyt1_box"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:layout_marginLeft="34dp"
+                android:layout_marginBottom="20dp"
+                android:src="@drawable/pyt2"/>
+
+           
+
+            <RadioButton
+                android:id="@+id/q1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CheckboxStyleNoMargin"
+                android:text="Rozpoczęcie rozmowy" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+                <RadioButton
+                    android:id="@+id/q2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/CheckboxStyleNoMargin"
+                    android:layout_gravity="center_vertical"
+                    android:text="Wytłumaczenie trudnych kwestii np.:" />
+                <EditText
+                    android:id="@+id/input2"
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="4dp"
+                    android:background="@drawable/background"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+            <RadioButton
+                android:id="@+id/q3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CheckboxStyleNoMargin"
+                android:layout_gravity="center_vertical"
+                android:text="Poinformowanie o braku produktu w aptece, ponieważ " />
+            <EditText
+                android:id="@+id/input3"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="4dp"
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/background"/>
+            </LinearLayout>
+            <RadioButton
+                android:id="@+id/q5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                style="@style/CheckboxStyleNoMargin"
+                android:text="Poinformowanie o braku możliwości sprzedaży produktu" />
+
+            <RadioButton
+                android:id="@+id/q6"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+                style="@style/CheckboxStyleNoMargin"
+                android:text="Odpowiedź na zarzuty ze strony pacjenta" />
+
+
+
+
+            <RadioButton
+                android:id="@+id/q4"
+                android:layout_marginTop="15dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/CheckboxStyleNoMargin"
+                android:text="@string/reakcja_na_i_wymie_inne_sytuacje_i" />
+            <EditText
+                android:id="@+id/input"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="70dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/background"/>
+
+
+            <ImageView
+                android:id="@+id/next"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|left"
+                android:layout_marginBottom="20dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="70dp"
+                android:src="@drawable/dalej"
+                android:text="DALEJ"/>
+
+        </LinearLayout>
+    </FrameLayout>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/form_bottom"/>
 </LinearLayout>
+
+     

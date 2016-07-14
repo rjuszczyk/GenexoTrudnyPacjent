@@ -41,6 +41,21 @@ public class QuizQuestion2 extends AppCompatActivity {
     @Bind(R.id.q4)
     RadioButton q4;
 
+    void select(RadioButton checkBox) {
+        if(checkBox!=q1)
+            q1.setChecked(false);
+        if(checkBox!=q2)
+            q2.setChecked(false);
+        if(checkBox!=q3)
+            q3.setChecked(false);
+        if(checkBox!=q4)
+            q4.setChecked(false);
+        if(checkBox!=q5)
+            q5.setChecked(false);
+        if(checkBox!=q6)
+            q6.setChecked(false);
+    }
+
 
     @Bind(R.id.input)
     EditText input;
@@ -102,6 +117,10 @@ public class QuizQuestion2 extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
+                    select((RadioButton) buttonView);
+                }
+
+                if(isChecked) {
                     input.setEnabled(true);
                     input.setAlpha(1f);
                 } else {
@@ -116,6 +135,10 @@ public class QuizQuestion2 extends AppCompatActivity {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked) {
+                    select((RadioButton) buttonView);
+                }
+
+                if(isChecked) {
                     input2.setEnabled(true);
                     input2.setAlpha(1f);
                 } else {
@@ -128,6 +151,10 @@ public class QuizQuestion2 extends AppCompatActivity {
         q3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    select((RadioButton) buttonView);
+                }
+
                 if(isChecked) {
                     input3.setEnabled(true);
                     input3.setAlpha(1f);
@@ -159,6 +186,9 @@ public class QuizQuestion2 extends AppCompatActivity {
         CompoundButton.OnCheckedChangeListener updateListener = new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    select((RadioButton) buttonView);
+                }
                 updateDalej();
             }
         };

@@ -1,76 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/form_top"
-            android:adjustViewBounds="true"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
-        <RadioButton
-            android:id="@+id/q1"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/CheckboxStyle"
+	<ImageView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:adjustViewBounds="true"
+		android:src="@drawable/form_top"/>
 
-            android:text="Osoba agresywna" />
+	<FrameLayout
+		android:layout_width="match_parent"
+		android:layout_height="0dp"
+		android:layout_weight="1">
 
-        <RadioButton
-            android:id="@+id/q2"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/CheckboxStyle"
+		<ImageView
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:adjustViewBounds="true"
+			android:layout_marginRight="40dp"
+			android:layout_marginBottom="10dp"
+			android:layout_gravity="right|bottom"
+			android:src="@drawable/pyt1_box"/>
 
-            android:text="Osoba niezdecydowana" />
+	<LinearLayout
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:layout_gravity="center"
+		android:orientation="vertical">
 
-        <RadioButton
-            android:id="@+id/q3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/CheckboxStyle"
+		<ImageView
 
-            android:text="Osoba zamknięta na porady z mojej strony" />
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:adjustViewBounds="true"
+			android:layout_marginLeft="34dp"
+			android:layout_marginBottom="20dp"
+			android:src="@drawable/pyt1"/>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-        <RadioButton
-            android:id="@+id/q4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            style="@style/CheckboxStyle"
+		<RadioButton
+			android:id="@+id/q1"
+			style="@style/CheckboxStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
 
-            android:text="Osoba... (wymień inne problemy):" />
-        </LinearLayout>
-        <EditText
-            android:id="@+id/input"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="40dp"
-            android:background="@drawable/background"/>
+			android:text="Osoba agresywna"/>
 
-    <ImageView
-        android:id="@+id/next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/dalej"
-        android:layout_gravity="bottom|right"
-        android:layout_marginRight="300dp"
-        android:layout_marginBottom="20dp"
-        android:text="DALEJ" />
+		<RadioButton
+			android:id="@+id/q2"
+			style="@style/CheckboxStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
 
-        </LinearLayout>
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:src="@drawable/form_bottom"
-            android:adjustViewBounds="true"/>
+			android:text="Osoba niezdecydowana"/>
+
+		<RadioButton
+			android:id="@+id/q3"
+			style="@style/CheckboxStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+
+			android:text="Osoba zamknięta na porady z mojej strony"/>
+
+		<LinearLayout
+			android:layout_width="match_parent"
+			android:layout_height="wrap_content">
+
+			<RadioButton
+				android:id="@+id/q4"
+				style="@style/CheckboxStyle"
+				android:layout_width="wrap_content"
+				android:layout_height="wrap_content"
+
+				android:text="@string/osoba_wymie_inne_problemy"/>
+		</LinearLayout>
+
+		<EditText
+			android:id="@+id/input"
+			android:layout_width="300dp"
+			android:layout_height="wrap_content"
+			android:layout_marginLeft="70dp"
+			android:layout_marginTop="8dp"
+
+			android:background="@drawable/background"/>
+
+		<ImageView
+			android:id="@+id/next"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:layout_gravity="bottom|left"
+			android:layout_marginBottom="20dp"
+			android:layout_marginTop="40dp"
+			android:layout_marginLeft="70dp"
+			android:src="@drawable/dalej"
+			android:text="DALEJ"/>
+
+	</LinearLayout>
+	</FrameLayout>
+	<ImageView
+		android:layout_width="match_parent"
+		android:layout_height="wrap_content"
+		android:adjustViewBounds="true"
+		android:src="@drawable/form_bottom"/>
 </LinearLayout>

@@ -3,5 +3,7 @@
 
     <string name="app_name">Słoneczna Pakietomania</string>
     <string name="search">Szukaj...</string>
+    <string name="osoba_wymie_inne_problemy">Osoba... <i>(wymień inne problemy)</i>:</string>
+    <string name="reakcja_na_i_wymie_inne_sytuacje_i">Reakcja na.... <i>(wymień inne sytuacje):</i></string>
 
 </resources>
