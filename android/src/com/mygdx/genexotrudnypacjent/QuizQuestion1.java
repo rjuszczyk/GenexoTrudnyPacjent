@@ -5,6 +5,8 @@ import android.os.Bundle;
 import android.support.annotation.CheckResult;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
@@ -105,9 +107,28 @@ public class QuizQuestion1 extends AppCompatActivity {
                 updateDalej();
             }
         };
+
+
         q1.setOnCheckedChangeListener(updateListener);
         q2.setOnCheckedChangeListener(updateListener);
         q3.setOnCheckedChangeListener(updateListener);
+
+        input.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                updateDalej();
+            }
+        });
     }
 
     void select(RadioButton checkBox) {

@@ -93,6 +93,10 @@ public class QuizQuestion2 extends AppCompatActivity {
         }
         input.setEnabled(false);
         input.setAlpha(0.5f);
+        input2.setEnabled(false);
+        input2.setAlpha(0.5f);
+        input3.setEnabled(false);
+        input3.setAlpha(0.5f);
         updateDalej();
         q4.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -103,6 +107,33 @@ public class QuizQuestion2 extends AppCompatActivity {
                 } else {
                     input.setEnabled(false);
                     input.setAlpha(0.5f);
+                }
+                updateDalej();
+            }
+        });
+
+        q2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    input2.setEnabled(true);
+                    input2.setAlpha(1f);
+                } else {
+                    input2.setEnabled(false);
+                    input2.setAlpha(0.5f);
+                }
+                updateDalej();
+            }
+        });
+        q3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked) {
+                    input3.setEnabled(true);
+                    input3.setAlpha(1f);
+                } else {
+                    input3.setEnabled(false);
+                    input3.setAlpha(0.5f);
                 }
                 updateDalej();
             }
@@ -132,8 +163,29 @@ public class QuizQuestion2 extends AppCompatActivity {
             }
         };
         q1.setOnCheckedChangeListener(updateListener);
-        q2.setOnCheckedChangeListener(updateListener);
-        q3.setOnCheckedChangeListener(updateListener);
+        q5.setOnCheckedChangeListener(updateListener);
+        q6.setOnCheckedChangeListener(updateListener);
+
+        TextWatcher updateDalejWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                updateDalej();
+            }
+        };
+
+        input.addTextChangedListener(updateDalejWatcher);
+        input2.addTextChangedListener(updateDalejWatcher);
+        input3.addTextChangedListener(updateDalejWatcher);
     }
 
 

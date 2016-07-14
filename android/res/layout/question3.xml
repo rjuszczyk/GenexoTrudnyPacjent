@@ -10,10 +10,15 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="40dp"
         android:lines="5"
-        android:background="@drawable/background"/>
+        android:background="@drawable/background"
+
+        android:gravity="left|top"
+        android:padding="8dp"
+        />
 
     <ImageView
         android:id="@+id/next"
+
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/dalej"
