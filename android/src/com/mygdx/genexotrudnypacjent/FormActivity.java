@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.mygdx.genexotrudnypacjent.R;
 import com.mygdx.genexotrudnypacjent.database.DatabaseHelper;
 import com.mygdx.genexotrudnypacjent.dialog.ChooseElementDialog;
+import com.mygdx.genexotrudnypacjent.dialog.ChooseStanowiskoDialog;
 import com.mygdx.genexotrudnypacjent.model.Row;
 import com.mygdx.genexotrudnypacjent.model.UserData;
 import com.mygdx.genexotrudnypacjent.util.KeyboardUtil;
@@ -39,6 +40,9 @@ public class FormActivity extends AppCompatActivity {
 
     @Bind(R.id.apteka)
     TextView mApteka;
+
+    @Bind(R.id.stanowisko)
+    TextView mStanopwisko;
 
     @Bind(R.id.dalej)
     View mQuiz;
@@ -110,6 +114,7 @@ public class FormActivity extends AppCompatActivity {
 
         mMiasto.setEnabled(false);
         mApteka.setEnabled(false);
+        mStanopwisko.setEnabled(false);
         mImie.setEnabled(false);
         mNazwisko.setEnabled(false);
         mTelefon.setEnabled(false);
@@ -139,8 +144,11 @@ public class FormActivity extends AppCompatActivity {
                         mMiasto.setEnabled(true);
                         mMiasto.setText("Miasto");
                         mApteka.setText("Apteka");
+                        mStanopwisko.setText("Stanowisko");
+
 
                         mApteka.setEnabled(false);
+                        mStanopwisko.setEnabled(false);
                         mImie.setEnabled(false);
                         mNazwisko.setEnabled(false);
                         mTelefon.setEnabled(false);
@@ -149,6 +157,7 @@ public class FormActivity extends AppCompatActivity {
                 }.show(getSupportFragmentManager(), "tag");
             }
         });
+
 
 
         mMiasto.setOnClickListener(new View.OnClickListener() {
@@ -171,8 +180,10 @@ public class FormActivity extends AppCompatActivity {
                     public void onRowSelected(Row row) {
                         miasto = row.miasto;
                         mMiasto.setText(miasto);
+
                         mApteka.setEnabled(true);
                         mApteka.setText("Apteka");
+                        mStanopwisko.setText("Stanowisko");
 
                         mImie.setEnabled(false);
                         mNazwisko.setEnabled(false);
@@ -208,7 +219,10 @@ public class FormActivity extends AppCompatActivity {
                     public void onRowSelected(Row row) {
                         nazwa_apteki = row.nazwa_apteki;
                         mApteka.setText(nazwa_apteki);
-                        mImie.setEnabled(true);
+                        mStanopwisko.setEnabled(true);
+                        mStanopwisko.setText("Stanowisko");
+
+                        mImie.setEnabled(false);
                         mNazwisko.setEnabled(true);
                         mTelefon.setEnabled(true);
                         mEmail.setEnabled(true);
@@ -219,6 +233,32 @@ public class FormActivity extends AppCompatActivity {
                 }.show(getSupportFragmentManager(), "tag");
             }
         });
+
+        mStanopwisko.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                new ChooseStanowiskoDialog() {
+
+
+
+                    @Override
+                    public void onRowSelected(String row) {
+
+                        mStanopwisko.setText(row);
+
+                        mImie.setEnabled(true);
+                        mNazwisko.setEnabled(true);
+                        mTelefon.setEnabled(true);
+                        mEmail.setEnabled(true);
+
+
+                        userData.setStanowisko(row);
+                    }
+                }.show(getSupportFragmentManager(), "tag");
+            }
+        });
+
 
         mImie.addTextChangedListener(mTextWatcher);
         mNazwisko.addTextChangedListener(mTextWatcher);

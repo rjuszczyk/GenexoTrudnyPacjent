@@ -10,7 +10,7 @@ public class UserData implements Serializable {
     String imie;
     String nazwisko;
     String telefon;
-
+    String stanowisko;
     public Row getRow() {
         return row;
     }
@@ -58,6 +58,14 @@ public class UserData implements Serializable {
 
     public void setQuiz_odp3(String quiz_odp3) {
         this.quiz_odp3 = quiz_odp3;
+    }
+
+    public String getStanowisko() {
+        return stanowisko;
+    }
+
+    public void setStanowisko(String stanowisko) {
+        this.stanowisko = stanowisko;
     }
 
     String quiz_odp1;

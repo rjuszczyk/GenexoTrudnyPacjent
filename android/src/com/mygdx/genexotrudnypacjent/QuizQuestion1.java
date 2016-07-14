@@ -54,12 +54,10 @@ public class QuizQuestion1 extends AppCompatActivity {
             mUserData.setQuiz_odp1(q1.getText().toString());
         }
 
-        mUserData.setQuiz_odp2("test2");
-        mUserData.setQuiz_odp3("test3");
         gotoNext();
     }
     private void gotoNext() {
-        Intent intent = new Intent(this, SendingDataActivity.class);
+        Intent intent = new Intent(this, QuizQuestion2.class);
         intent.putExtra("user_data", mUserData);
         finish();
         startActivity(intent);

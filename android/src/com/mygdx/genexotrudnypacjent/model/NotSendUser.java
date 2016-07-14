@@ -9,6 +9,7 @@ public class NotSendUser extends Model {
     public String imie;
     public String nazwisko;
     public String telefon;
+    public String stanowisko;
     public String email;
     public String odp1;
     public String odp2;

@@ -15,20 +15,21 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 
 import com.mygdx.genexotrudnypacjent.R;
+import com.mygdx.genexotrudnypacjent.adapter.StanowiskoRecyclerViewAdaoter;
 import com.mygdx.genexotrudnypacjent.adapter.StoresRecyclerViewAdapter;
 import com.mygdx.genexotrudnypacjent.database.DatabaseHelper;
 import com.mygdx.genexotrudnypacjent.model.Row;
 
+import java.util.Arrays;
 import java.util.List;
 
-
 /**
- * Created by Radek on 2016-02-27.
+ * Created by Radek on 14.07.2016.
  */
-public class ChooseElementDialog extends BaseDialog implements StoresRecyclerViewAdapter.OnItemClickListener {
-    public static String TAG = "ChoosePositionDialog";
+public class ChooseStanowiskoDialog extends BaseDialog implements StanowiskoRecyclerViewAdaoter.OnItemClickListener {
+    public static String TAG = "ChooseStanowiskoDialogpublic";
 
-    private StoresRecyclerViewAdapter mStoresRecyclerViewAdapter;
+    private StanowiskoRecyclerViewAdaoter mStoresRecyclerViewAdapter;
 
     private RecyclerView mRecyclerView;
     private EditText mSearchView;
@@ -41,22 +42,16 @@ public class ChooseElementDialog extends BaseDialog implements StoresRecyclerVie
         return choosePositionDialog;
     }
 
-    public String getRowText(Row row) {
-        return row.imie_przedstawiciela+" "+row.nazwisko_przedstawiciela;
-    }
 
-    public List<Row> getRows(Context context) {
-        return DatabaseHelper.rowsForPrzedstawiciel(context);
-    }
 
-    public void onRowSelected(Row row) {
+    public void onRowSelected(String row) {
     }
 
     protected boolean isTwoLines() {
         return false;
     }
 
-    public ChooseElementDialog()
+    public ChooseStanowiskoDialog()
     {
         super();
 
@@ -80,10 +75,6 @@ public class ChooseElementDialog extends BaseDialog implements StoresRecyclerVie
         mRecyclerView = (RecyclerView) mContentView.findViewById(R.id.recycler_view);
         mProgressContainer = mContentView.findViewById(R.id.progress_contianer);
         mSearchView = (EditText) mContentView.findViewById(R.id.search_text);
-
-
-
-
 
 
         mSearchView.addTextChangedListener(new TextWatcher() {
@@ -132,11 +123,11 @@ public class ChooseElementDialog extends BaseDialog implements StoresRecyclerVie
             LinearLayoutManager manager = new LinearLayoutManager(getActivity(), LinearLayoutManager.VERTICAL, false);
             mRecyclerView.setLayoutManager(manager);
 
-            mStoresRecyclerViewAdapter = new StoresRecyclerViewAdapter() {
+            mStoresRecyclerViewAdapter = new StanowiskoRecyclerViewAdaoter() {
 
                 @Override
-                public String getTextFromRow(Row row) {
-                    return getRowText(row);
+                public String getTextFromRow(String row) {
+                    return row;
                 }
 
                 public boolean isTwoLinesAdapter() {
@@ -151,7 +142,9 @@ public class ChooseElementDialog extends BaseDialog implements StoresRecyclerVie
             new Thread(new Runnable() {
                 @Override
                 public void run() {
-                    final List<Row> stores = getRows(getActivity());
+                    final List<String> stores = Arrays.asList("kierownik apteki",
+                            "personel farmaceutyczny",
+                            "kierownik apteki/personel farmaceutyczny");
                     handler.post(new Runnable() {
                         @Override
                         public void run() {
@@ -167,7 +160,7 @@ public class ChooseElementDialog extends BaseDialog implements StoresRecyclerVie
     }
 
     @Override
-    public void onItemClick(View view, Row store) {
+    public void onItemClick(View view, String store) {
         onRowSelected(store);
         dismiss();
     }

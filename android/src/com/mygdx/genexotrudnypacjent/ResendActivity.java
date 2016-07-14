@@ -111,6 +111,7 @@ public class ResendActivity extends AppCompatActivity {
                     notSendUser.nazwisko,
 
                     notSendUser.telefon,
+                    notSendUser.stanowisko,
                     notSendUser.email,
                     notSendUser.odp1,
                     notSendUser.odp2,
@@ -141,6 +142,7 @@ public class ResendActivity extends AppCompatActivity {
             final String nazwisko,
 
             final String telefon,
+            final String stanowisko,
             final String email,
             final String odp1,
             final String odp2,
@@ -169,6 +171,9 @@ public class ResendActivity extends AppCompatActivity {
 
         data += "&" + URLEncoder.encode("telefon", "UTF-8") + "="
                 + URLEncoder.encode(telefon, "UTF-8");
+
+        data += "&" + URLEncoder.encode("stanowisko", "UTF-8") + "="
+                + URLEncoder.encode(stanowisko, "UTF-8");
 
         data += "&" + URLEncoder.encode("email", "UTF-8") + "="
                 + URLEncoder.encode(email, "UTF-8");
@@ -263,6 +268,7 @@ public class ResendActivity extends AppCompatActivity {
                             notSendUser.nazwisko = nazwisko;
 
                             notSendUser.telefon = telefon;
+                            notSendUser.stanowisko = stanowisko;
                             notSendUser.email = email;
                             notSendUser.odp1 = odp1;
                             notSendUser.odp2 = odp2;
@@ -303,6 +309,8 @@ public class ResendActivity extends AppCompatActivity {
                         notSendUser.nazwisko = nazwisko;
 
                         notSendUser.telefon = telefon;
+                        notSendUser.stanowisko = stanowisko;
+
                         notSendUser.email = email;
                         notSendUser.odp1 = odp1;
                         notSendUser.odp2 = odp2;

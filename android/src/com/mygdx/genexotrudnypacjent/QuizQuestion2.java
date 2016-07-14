@@ -32,11 +32,24 @@ public class QuizQuestion2 extends AppCompatActivity {
     @Bind(R.id.q3)
     RadioButton q3;
 
+    @Bind(R.id.q5)
+    RadioButton q5;
+
+    @Bind(R.id.q6)
+    RadioButton q6;
+
     @Bind(R.id.q4)
     RadioButton q4;
 
+
     @Bind(R.id.input)
     EditText input;
+
+    @Bind(R.id.input2)
+    EditText input2;
+
+    @Bind(R.id.input3)
+    EditText input3;
 
     @Bind(R.id.next)
     View next;
@@ -44,21 +57,24 @@ public class QuizQuestion2 extends AppCompatActivity {
     @OnClick(R.id.next)
     void onNext(View view) {
         if(q4.isChecked()) {
-            mUserData.setQuiz_odp1(q4.getText().toString() + " " + input.getText().toString());
-        } else if(q3.isChecked()) {
-                mUserData.setQuiz_odp1(q3.getText().toString());
-        } else if(q2.isChecked()) {
-            mUserData.setQuiz_odp1(q2.getText().toString());
+            mUserData.setQuiz_odp2(q4.getText().toString() + " " + input.getText().toString());
+        } else  if(q2.isChecked()) {
+            mUserData.setQuiz_odp2(q2.getText().toString() + " " + input2.getText().toString());
+        } else  if(q3.isChecked()) {
+            mUserData.setQuiz_odp2(q3.getText().toString() + " " + input3.getText().toString());
+        } else if(q5.isChecked()) {
+                mUserData.setQuiz_odp2(q5.getText().toString());
+        } else if(q6.isChecked()) {
+            mUserData.setQuiz_odp2(q6.getText().toString());
         } else if(q1.isChecked()) {
-            mUserData.setQuiz_odp1(q1.getText().toString());
+            mUserData.setQuiz_odp2(q1.getText().toString());
         }
 
-        mUserData.setQuiz_odp2("test2");
         mUserData.setQuiz_odp3("test3");
         gotoNext();
     }
     private void gotoNext() {
-        Intent intent = new Intent(this, SendingDataActivity.class);
+        Intent intent = new Intent(this, QuizQuestion3.class);
         intent.putExtra("user_data", mUserData);
         finish();
         startActivity(intent);
@@ -125,10 +141,16 @@ public class QuizQuestion2 extends AppCompatActivity {
         boolean isOk = false;
         if(q4.isChecked()) {
             isOk = !input.getText().toString().isEmpty();
+        } else if(q2.isChecked()) {
+            isOk = !input2.getText().toString().isEmpty();
+        } else if(q3.isChecked()) {
+            isOk = !input3.getText().toString().isEmpty();
         } else {
-            isOk = q1.isChecked() || q2.isChecked() || q3.isChecked();
+                isOk = q1.isChecked() || q5.isChecked() || q6.isChecked();            
         }
 
+        
+        
         if(isOk) {
             next.setEnabled(true);
             next.setAlpha(1);
